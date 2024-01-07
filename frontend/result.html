@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="result.css">
+    <title>Quiz Results</title>
+</head>
+<body>
+    <header>
+        <h1>Quiz Results</h1>
+    </header>
+    <main>
+        <div id="result-info">
+            <p id="points">Points: 85</p>
+            <p id="time">Time: 15:30</p>
+        </div>
+        <div id="message">
+            <p>Congratulations! You've successfully completed the quiz.</p>
+        </div>
+        <div id="solutions" style="display: none;">
+            <h2>Solutions:</h2>
+            <div class="question-solution">
+                <p>Question 1: Correct Answer is A</p>
+            </div>
+            <div class="question-solution">
+                <p>Question 2: Correct Answer is C</p>
+            </div>
+            <!-- Add more question solutions as needed -->
+        </div>
+        <div id="actions">
+            <button id="retry">Retry Quiz</button>
+            <button id="home">Go to Home</button>
+            <button id="contact">Contact a Teacher</button>
+        </div>
+    </main>
+    <script src="result.js"></script>
+</body>
+</html>
