@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question CRUD</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .edit-btn, .delete-btn {
+            padding: 6px 12px;
+            cursor: pointer;
+        }
+        .edit-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .delete-btn {
+            background-color: #f44336;
+            color: white;
+        }
+        .btn-container {
+            margin-bottom: 20px;
+        }
+        .btn-container button {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="btn-container">
+        <button id="homepage-btn">Homepage</button>
+        <button id="add-question-btn">Add Question</button>
+    </div>
+    <h2>Questions List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Question</th>
+                <th>Answer A</th>
+                <th>Answer B</th>
+                <th>Answer C</th>
+                <th>Answer D</th>
+                <th>Correct Answer</th>
+                <th>Level</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="questions-table">
+        </tbody>
+    </table>
+
+    <script>
+
+        function populateQuestionsTable() {
+            var sampleData = [
+                { id: 1, question_text: 'Sample Question 1', answer_a: 'A1', answer_b: 'B1', answer_c: 'C1', answer_d: 'D1', correct_answer: 'A', level: 'Beginner' },
+                { id: 2, question_text: 'Sample Question 2', answer_a: 'A2', answer_b: 'B2', answer_c: 'C2', answer_d: 'D2', correct_answer: 'B', level: 'Intermediate' },
+                { id: 3, question_text: 'Sample Question 3', answer_a: 'A3', answer_b: 'B3', answer_c: 'C3', answer_d: 'D3', correct_answer: 'C', level: 'Advanced' }
+            ];
+
+            var tableBody = document.getElementById('questions-table');
+            tableBody.innerHTML = '';
+
+            sampleData.forEach(function(question) {
+                var row = document.createElement('tr');
+
+                row.innerHTML = `
+                    <td>${question.id}</td>
+                    <td>${question.question_text}</td>
+                    <td>${question.answer_a}</td>
+                    <td>${question.answer_b}</td>
+                    <td>${question.answer_c}</td>
+                    <td>${question.answer_d}</td>
+                    <td>${question.correct_answer}</td>
+                    <td>${question.level}</td>
+                    <td>
+                        <button class="edit-btn" onclick="editQuestion(${question.id})">Edit</button>
+                        <button class="delete-btn" onclick="deleteQuestion(${question.id})">Delete</button>
+                    </td>
+                `;
+
+                tableBody.appendChild(row);
+            });
+        }
+
+        function editQuestion(id) {
+            window.location.href = `edit_question.php?id=${id}`;
+        }
+
+        function deleteQuestion(id) {
+            window.location.href = `delete_question.php?id=${id}`;
+        }
+
+        window.onload = function() {
+            populateQuestionsTable();
+        };
+    </script>
+</body>
+</html>
