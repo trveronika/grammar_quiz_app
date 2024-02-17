@@ -62,7 +62,7 @@
         <tbody id="questions-table">
             <?php
             include 'connect.php'; 
-            $sql = "SELECT * FROM questions";
+            $sql = "SELECT * FROM questions ORDER BY question_id ASC";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
@@ -93,6 +93,10 @@
 
     <script>
         // JavaScript functions for editing and deleting questions
+        function editQuestion(question_id) {
+        // Redirect to the edit_question.php page with the question_id as a query parameter
+        window.location.href = "edit_question.php?id=" + question_id;
+    }
     </script>
 </body>
 </html>
