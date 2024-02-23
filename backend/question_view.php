@@ -46,19 +46,15 @@
             </tr>
         </thead>
         <tbody>
-            <!-- PHP loop to populate table rows with questions -->
             <?php
-            include 'db_connection.php'; // Include your database connection file
+            include 'db_connection.php'; 
 
-            // Fetch all questions from the database
             $sql = "SELECT * FROM questions";
             $result = $conn->query($sql);
 
-            // Check if there are any questions
             if ($result->num_rows > 0) {
-                // Loop through each row of the result set
                 while ($row = $result->fetch_assoc()) {
-                    // Output HTML table row for each question
+
                     echo "<tr>";
                     echo "<td>{$row['id']}</td>";
                     echo "<td>{$row['question_text']}</td>";

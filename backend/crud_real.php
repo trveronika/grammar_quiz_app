@@ -92,11 +92,33 @@
     </table>
 
     <script>
-        // JavaScript functions for editing and deleting questions
         function editQuestion(question_id) {
-        // Redirect to the edit_question.php page with the question_id as a query parameter
-        window.location.href = "edit_question.php?id=" + question_id;
-    }
+            window.location.href = "edit_question.php?id=" + question_id;
+        }
+
+        function deleteQuestion(question_id) {
+            if (confirm("Are you sure you want to delete this question?")) {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+
+                        window.location.reload();
+                    }
+                };
+                xhttp.open("POST", "delete_question.php", true);
+                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhttp.send("question_id=" + question_id);
+            }
+        }
+
+        document.getElementById("homepage-btn").addEventListener("click", function() {
+            window.location.href = "index.php";
+        });
+
+        document.getElementById("add-question-btn").addEventListener("click", function() {
+            window.location.href = "add_questions.php";
+        });
     </script>
 </body>
 </html>
+

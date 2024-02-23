@@ -3,15 +3,12 @@ include 'connect.php';
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Check if level is set in the URL
 if (isset($_GET['level'])) {
     $level = $_GET['level'];
 } else {
-    // Default to 'A2' if level is not specified
     $level = 'A2';
 }
 
-// Fetch questions for the specified level
 $sql = "SELECT * FROM questions WHERE level = '$level' ORDER BY RAND()";
 $result = $conn->query($sql);
 ?>
@@ -22,7 +19,7 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
-    <!-- Include your CSS styles here -->
+
     <style>
         .quiz-container {
             width: 70%;
@@ -89,7 +86,7 @@ $result = $conn->query($sql);
             if (currentQuestion < fieldsets.length) {
                 showQuestion(currentQuestion);
             } else {
-                alert('Quiz completed!'); // Replace with your logic for quiz completion
+                alert('Quiz completed!');
             }
         }
 
