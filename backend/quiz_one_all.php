@@ -88,6 +88,17 @@ $questions = $result->fetch_all(MYSQLI_ASSOC);
     </script>
 </head>
 <body>
+<script>
+
+        function askForName() {
+            var userName = prompt("Please enter your name:");
+            if (userName != null && userName != "") {
+                document.getElementById("username").innerHTML = "User: " + userName;
+            }
+        }
+
+        window.onload = askForName;
+    </script>
     <header>
         <h1>English Grammar Quiz</h1>
         <div id="quiz-info">
@@ -103,7 +114,7 @@ $questions = $result->fetch_all(MYSQLI_ASSOC);
     </main>
     <footer>
         <div id="navigation">
-            <button id="previous" disabled>Previous</button>
+            <!-- <button id="previous" disabled>Previous</button> -->
             <button id="pause">Pause</button>
             <button id="next" onclick="nextQuestion(currentQuestionIndex)">Next</button>
             <button id="stop">Stop</button>
