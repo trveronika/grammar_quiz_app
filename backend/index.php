@@ -17,8 +17,9 @@
             <button id="intermediate" onclick="startQuiz('B2')">Intermediate</button>
             <button id="advanced" onclick="startQuiz('C1')">Advanced</button>
         </div>
-        <div class="admin">
+        <div class="additional">
             <button id="admin">Admin</button>
+            <button id="leaderboard">Leaderboard</button>
         </div>
     </main>
     
@@ -29,6 +30,10 @@
 
         document.getElementById('admin').addEventListener('click', function() {
             window.location.href = 'login.php';
+        });
+
+        document.getElementById('leaderboard').addEventListener('click', function() {
+            window.location.href = 'leaderboard.php';
         });
         
     </script>

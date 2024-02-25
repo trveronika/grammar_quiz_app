@@ -52,7 +52,7 @@ main {
     justify-content: space-around;
 }
 
-#retry, #home, #contact {
+#home, #contact, #leaderboard {
     font-size: 18px;
     padding: 10px 20px;
     background-color: #01527b;
