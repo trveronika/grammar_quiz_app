@@ -25,7 +25,7 @@
     
     <script>
         function startQuiz(level) {
-            window.location.href = 'quiz_one_all.php?level=' + level;
+            window.location.href = 'quiz.php?level=' + level;
         }
 
         document.getElementById('admin').addEventListener('click', function() {
