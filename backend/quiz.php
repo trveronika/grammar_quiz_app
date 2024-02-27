@@ -9,7 +9,6 @@ if (isset($_GET['level'])) {
     $level = 'A2';
 }
 
-// $sql = "SELECT * FROM questions WHERE level = '$level' ORDER BY question_id";
 $sql = "SELECT * FROM questions WHERE level = '$level' ORDER BY RAND() LIMIT 25";
 $result = $conn->query($sql);
 $questions = $result->fetch_all(MYSQLI_ASSOC);
@@ -156,7 +155,7 @@ $questions = $result->fetch_all(MYSQLI_ASSOC);
     <h1>English Grammar Quiz</h1>
     <div id="quiz-info">
         <p id="level">Level: <?php echo ucfirst($level); ?></p>
-        <p id="username">User: John Doe</p>
+        <p id="username">User: Anonymous</p>
         <p id="timer">Time: 00:00:00</p>
         <p id="score">Score: 0</p>
     </div>

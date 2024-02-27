@@ -3,21 +3,30 @@ include 'connect.php';
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+$message = '';
+
 if (isset($_GET['username'], $_GET['time'], $_GET['score'], $_GET['level'])) {
     $username = $_GET['username'];
     $time = $_GET['time'];
     $score = $_GET['score'];
     $level = $_GET['level'];
 
-    $sql = "INSERT INTO leaderboard (username, time, points, level) VALUES ('$username', '$time', '$score', '$level')";
+    $checkSql = "SELECT * FROM leaderboard WHERE username = '$username' AND time = '$time' AND points = '$score' AND level = '$level'";
+    $checkResult = $conn->query($checkSql);
 
-    if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
+    if ($checkResult->num_rows == 0) {
+        $sql = "INSERT INTO leaderboard (username, time, points, level) VALUES ('$username', '$time', '$score', '$level')";
+
+        if ($conn->query($sql) === TRUE) {
+            $message = "Congratulations! :) Check out the leaderboard!";
+        } else {
+            $message = "Error: " . $sql . "<br>" . $conn->error;
+        }
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        $message = "Congratulations! :) Look at the leaderboard!";
     }
 } else {
-    echo "Required data is missing";
+    $message = "Required data is missing";
 }
 
 $conn->close();
@@ -41,7 +50,7 @@ $conn->close();
             <p id="time">Time: <?php echo isset($_GET['time']) ? $_GET['time'] : ''; ?></p>
         </div>
         <div id="message">
-            <p>Congratulations! You've successfully completed the quiz.</p>
+            <p><?php echo $message; ?></p>
         </div>
         <div id="actions">
             <button id="home" onclick="window.location.href = 'index.php';">Go to Home</button>
@@ -49,7 +58,5 @@ $conn->close();
             <button id="leaderboard" onclick="window.location.href = 'leaderboard.php';">Leaderboard</button>
         </div>
     </main>
-    <script src="result.js"></script>
 </body>
 </html>
-
