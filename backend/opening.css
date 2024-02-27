@@ -1,11 +1,8 @@
-
-* 
-{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 
 body {
     font-family: 'Times New Roman', Times, serif;
@@ -14,7 +11,6 @@ body {
     padding: 0;
 }
 
-
 header {
     background-color: #3b8a89;
     color: white;
@@ -22,14 +18,14 @@ header {
     padding: 20px;
 }
 
-
 main {
     text-align: center;
     margin: 20px;
 }
 
-
-.level_select button {
+.level_select button,
+.additional button,
+.admin button {
     font-size: 18px;
     padding: 10px 20px;
     margin: 10px;
@@ -40,23 +36,30 @@ main {
     cursor: pointer;
 }
 
-
-.additional button {
-    font-size: 18px;
-    padding: 10px 20px;
-    margin: 10px;
+.additional button,
+.admin button {
     background-color: #01527b;
-    color: white;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
 }
 
+hr {
+    border: 1px solid black;
+}
 
-@media (max-width: 768px) {
-    .level_select button,
-    .admin button {
-        font-size: 16px;
-        padding: 8px 16px;
-    }
+.help-button {
+    margin-top: 30px;
+    font-size: 15px; 
+}
+
+.help p {
+    margin: 10px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #3b8a89;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }

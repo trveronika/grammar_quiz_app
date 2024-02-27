@@ -1,60 +1,37 @@
+<?php
+session_start();
+if (!isset($_SESSION["id"])) {
+    header("Location: login.php");
+    exit;
+}
+
+include 'connect.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="crud.css">
     <title>Question CRUD</title>
-    <style>
-         table {
-            width: 100%; 
-            border-collapse: collapse; 
-        }
-
-        th, td {
-            padding: 8px; 
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        .edit-btn, .delete-btn {
-            padding: 6px 10px;
-            margin-right: 5px;
-            border: none;
-            cursor: pointer;
-            background-color: #007bff;
-            color: #fff;
-            border-radius: 4px;
-        }
-
-        .edit-btn:hover, .delete-btn:hover {
-            background-color: #0056b3;
-        }
-
-        .btn-container {
-            margin-bottom: 20px;
-        }
-    </style>
 </head>
 <body>
+    <h2> Quiz Questions</h2>
     <div class="btn-container">
         <button id="homepage-btn">Homepage</button>
         <button id="add-question-btn">Add Question</button>
     </div>
-    <h2>Questions List</h2>
     <table>
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Question</th>
-                <th>Answer A</th>
-                <th>Answer B</th>
-                <th>Answer C</th>
-                <th>Answer D</th>
-                <th>Correct Answer</th>
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
+                <th>D</th>
+                <th>Solution</th>
                 <th>Level</th>
                 <th>Actions</th>
             </tr>
