@@ -33,11 +33,13 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css"></style>
     <title>Edit Question</title>
 </head>
 <body>
-    <h2>Edit Question</h2>
     <form action="process_edit.php" method="post">
+        <h2>Edit Question</h2>
+
         <input type="hidden" name="question_id" value="<?php echo $question_id; ?>">
         <label for="question_text">Question:</label><br>
         <textarea id="question_text" name="question_text" rows="4" cols="50" required><?php echo $question_text; ?></textarea><br>
@@ -62,8 +64,10 @@ $conn->close();
             <option value="B2" <?php if ($level === 'B2') echo 'selected'; ?>>B2</option>
             <option value="C1" <?php if ($level === 'C1') echo 'selected'; ?>>C1</option>
         </select><br><br>
-        <input type="submit" value="Submit">
+        <div>
+            <input type="submit" value="Submit">
+            <a href="crud.php">Back</a>
+        </div>
     </form>
-    <a href="crud.php">Back</a>
 </body>
 </html>

@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css"></style>
     <title>Add Question</title>
 </head>
+<header></header>
 <body>
-    <h2>Add Question</h2>
     <form action="process_add.php" method="post">
+        <h2>Add question</h2>
+
         <label for="question_text">Question:</label><br>
         <textarea id="question_text" name="question_text" rows="4" cols="50" required></textarea><br>
 
@@ -38,9 +41,11 @@
             <option value="C1">C1</option>
         </select><br><br>
 
+        <div>
         <input type="submit" value="Submit">
+        <a href="crud.php">Back</a>
+        </div>
+    
     </form>
-
-    <a href="crud.php">Back</a>
 </body>
 </html>
