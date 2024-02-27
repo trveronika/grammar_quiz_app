@@ -7,7 +7,7 @@
 </head>
 <body>
     <h2>Add Question</h2>
-    <form action="process_add_question.php" method="post">
+    <form action="process_add.php" method="post">
         <label for="question_text">Question:</label><br>
         <textarea id="question_text" name="question_text" rows="4" cols="50" required></textarea><br>
 

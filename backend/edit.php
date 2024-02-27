@@ -37,7 +37,7 @@ $conn->close();
 </head>
 <body>
     <h2>Edit Question</h2>
-    <form action="process_edit_question.php" method="post">
+    <form action="process_edit.php" method="post">
         <input type="hidden" name="question_id" value="<?php echo $question_id; ?>">
         <label for="question_text">Question:</label><br>
         <textarea id="question_text" name="question_text" rows="4" cols="50" required><?php echo $question_text; ?></textarea><br>
