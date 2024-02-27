@@ -7,33 +7,144 @@
     <title>English Grammar Quiz</title>
 </head>
 <body>
-    <header>
-        <h1>English Grammar Quiz</h1>
-        <div id="quiz-info">
-            <p id="level">Level: Intermediate</p>
-            <p id="username">User: John Doe</p>
-            <p id="timer">Time: 25:00</p>
-        </div>
-    </header>
-    <main>
-        <div id="question">
-            <p>Question goes here...</p>
-        </div>
-        <div id="options">
-            <button class="option" onclick="checkAnswer(this)">Option 1</button>
-            <button class="option" onclick="checkAnswer(this)">Option 2</button>
-            <button class="option" onclick="checkAnswer(this)">Option 3</button>
-            <button class="option" onclick="checkAnswer(this)">Option 4</button>
-        </div>
-    </main>
-    <footer>
-        <div id="navigation">
-            <button id="previous">Previous</button>
-            <button id="pause">Pause</button>
-            <button id="next">Next</button>
-            <button id="stop">Stop</button>
-        </div>
-    </footer>
-    <script src="quiz.js"></script>
+<script src="start_quiz.js"></script>
+<script>
+    var questions = <?php echo json_encode($questions); ?>;
+    var currentQuestionIndex = 0;
+    var userScore = 0;
+    var timerInterval;
+    var timeElapsed = 0;
+    
+
+    function displayQuestion(index) {
+        var question = questions[index];
+        document.getElementById('question').innerHTML = '<p>Question ' + (index + 1) + ': ' + question.question_text + '</p>';
+        var options = document.getElementById('options');
+        options.innerHTML = '';
+        options.innerHTML += '<button class="option" onclick="checkAnswer(this, \'' + question.correct_answer + '\', ' + index + ')" value="A">' + question.answer_a + '</button>';
+        options.innerHTML += '<button class="option" onclick="checkAnswer(this, \'' + question.correct_answer + '\', ' + index + ')" value="B">' + question.answer_b + '</button>';
+        options.innerHTML += '<button class="option" onclick="checkAnswer(this, \'' + question.correct_answer + '\', ' + index + ')" value="C">' + question.answer_c + '</button>';
+        options.innerHTML += '<button class="option" onclick="checkAnswer(this, \'' + question.correct_answer + '\', ' + index + ')" value="D">' + question.answer_d + '</button>';
+    }
+
+    function startTimer() {
+        var timerDisplay = document.getElementById('timer');
+        var timeInSeconds = timeElapsed;
+
+        timerInterval = setInterval(function() {
+            var hours = Math.floor(timeInSeconds / 3600);
+            var minutes = Math.floor((timeInSeconds % 3600) / 60);
+            var seconds = timeInSeconds % 60;
+
+            var formattedTime = ('0' + hours).slice(-2) + ':' + ('0' + minutes).slice(-2) + ':' + ('0' + seconds).slice(-2);
+            timerDisplay.textContent = 'Time: ' + formattedTime;
+
+            timeInSeconds++;
+            timeElapsed = timeInSeconds;
+        }, 1000);
+    }
+
+    function checkAnswer(selectedButton, correctAnswer, questionIndex) {
+        var isCorrect = selectedButton.value === correctAnswer;
+
+        if (isCorrect) {
+            selectedButton.style.backgroundColor = "#4CAF50";
+            userScore++;
+            updateScore();
+        } else {
+            selectedButton.style.backgroundColor = "#FF0000";
+            var correctButton = document.querySelector('button[value="' + correctAnswer + '"]');
+            correctButton.style.outline = "2px solid #4CAF50";
+            correctButton.style.backgroundColor = "#CCCCCC";
+            correctButton.style.color = "#000000"
+        }
+
+        var allButtons = document.getElementsByClassName("option");
+        for (var i = 0; i < allButtons.length; i++) {
+            allButtons[i].disabled = true;
+        }
+
+        setTimeout(function () {
+            nextQuestion(questionIndex);
+        }, 3000);
+    }
+
+    function nextQuestion(questionIndex) {
+    currentQuestionIndex++;
+
+    if (currentQuestionIndex < questions.length) {
+        displayQuestion(currentQuestionIndex);
+    } else {
+        clearInterval(timerInterval);
+        var username = document.getElementById('username').textContent.split(': ')[1]; 
+        var time = document.getElementById('timer').textContent.split(': ')[1];
+
+        var level = "<?php echo $level; ?>";
+        
+        window.location.href = 'result.php?score=' + userScore + '&username=' + encodeURIComponent(username) + '&time=' + encodeURIComponent(time) + '&level=' + encodeURIComponent(level);
+    }
+}
+
+    function updateScore() {
+        document.getElementById('score').innerHTML = 'Score: ' + userScore;
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        displayQuestion(currentQuestionIndex);
+        updateScore();
+        startTimer();
+    });
+
+    function pauseQuiz() {
+    clearInterval(timerInterval);
+    alert("Quiz Paused. Click OK to resume.");
+    startTimer();
+}
+
+    function closePopup() {
+        var popup = document.getElementById('pausePopup');
+        if (popup) {
+            popup.remove();
+        }
+        
+        var options = document.getElementById('options').getElementsByTagName('button');
+        for (var i = 0; i < options.length; i++) {
+            options[i].disabled = false;
+        }
+        
+        startTimer();
+    }
+
+    function finishQuiz() {
+        clearInterval(timerInterval);
+        
+        var username = document.getElementById('username').textContent.split(': ')[1];
+        var time = document.getElementById('timer').textContent.split(': ')[1];
+        var level = "<?php echo $level; ?>"; 
+
+        window.location.href = 'result.php?score=' + userScore + '&username=' + encodeURIComponent(username) + '&time=' + encodeURIComponent(time) + '&level=' + encodeURIComponent(level);
+    }
+</script>
+
+<header>
+    <h1>English Grammar Quiz</h1>
+    <div id="quiz-info">
+        <p id="level">Level: <?php echo ucfirst($level); ?></p>
+        <p id="username">User: Anonymous</p>
+        <p id="timer">Time: 00:00:00</p>
+        <p id="score">Score: 0</p>
+    </div>
+</header>
+<main>
+    <div id="question"></div>
+    <div id="options"></div>
+</main>
+<footer>
+    <div id="navigation">
+        <button id="pause" onclick="pauseQuiz()">Pause</button>
+        <button id="next" onclick="nextQuestion(currentQuestionIndex)">Next</button>
+        <button id="stop" onclick="finishQuiz()">Finish</button>
+    </div>
+</footer>
 </body>
 </html>
