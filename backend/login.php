@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div class="container">
         <div class="login-container">
-            <h2>Login</h2>
+            <h2>Teacher Login</h2>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <div class="form-group">
                     <label for="username">Username:</label>
@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <button type="submit">Login</button>
             </form>
-            <p>Don't have an account? <a href="register.php">Register</a></p>
+            <p>Are you a new teacher? <a href="register.php">Register</a></p>
             <?php
 
             if (isset($error_message)) {
