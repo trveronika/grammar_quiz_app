@@ -180,7 +180,75 @@
         </details>
         <details>
             <summary>Passives</summary>
-            <p>examples</p>
+            <p>
+            <table>
+                <tr>
+                    <th>Tense</th>
+                    <th>Active</th>
+                    <th>Passive</th>
+                </tr>
+                <tr>
+                    <td>Present Simple</td>
+                    <td>Authors write novels.</td>
+                    <td>Novels are written by authors.</td>
+                </tr>
+                <tr>
+                    <td>Prsent Continuous</td>
+                    <td>We are renovating the house.</td>
+                    <td>The house is being renovated.</td>
+                </tr>
+                <tr>
+                    <td>Present Perfect</td>
+                    <td>She has lost her keys.</td>
+                    <td>The keys have been lost.</td>
+                </tr>
+                <tr>
+                    <td>Past Simple</td>
+                    <td>Someone stole this bike.</td>
+                    <td>This bike was stolen.</td>
+                </tr>
+                <tr>
+                    <td>Past Continuous</td>
+                    <td>The boys were painting the room.</td>
+                    <td>The room was being painted.</td>
+                </tr>
+                <tr>
+                    <td>Past Perfect</td>
+                    <td>They had called him before work.</td>
+                    <td>He had been called before work.</td>
+                </tr>
+                <tr>
+                    <td>Future Simple</td>
+                    <td>Jane will sell the books.</td>
+                    <td>The books will be sold by Jane.</td>
+                </tr>
+                <tr>
+                    <td>Future Continuous</td>
+                    <td>Tomorrow this time students will be writing a test.</td>
+                    <td>A test will be written tomorrow this time.</td>
+                </tr>
+                <tr>
+                    <td>Future Perfect</td>
+                    <td>By 2040 we will have invented flying cars.</td>
+                    <td>Flying cars will have been invented by 2040.</td>
+                </tr>
+                <tr>
+                    <td>Be going to</td>
+                    <td>We are going to clean the rooms.</td>
+                    <td>The rooms are going to be cleaned.</td>
+                </tr>
+                <tr>
+                    <td>Present modals</td>
+                    <td>Students have to do the homework.</td>
+                    <td>The homework has to be done by students.</td>
+                </tr>
+                <tr>
+                    <td>Past modals</td>
+                    <td>They must have discussed the price.</td>
+                    <td>The price must have been discussed.</td>
+                </tr>
+            </table>
+            </p>
         </details>
         <details>
             <summary>Modals</summary>
@@ -188,11 +256,116 @@
         </details>
         <details>
             <summary>Conditionals</summary>
-            <p>examples</p>
+            <p>
+            <table>
+                <tr>
+                    <th>Type</th>
+                    <th>Examples</th>
+                </tr>
+                <tr>
+                    <td>Zero conditional</td>
+                    <td>
+                        You are more productive if you have a plan. <br>
+                        If people don't sleep enough, they are tired all the time. <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>First conditional</td>
+                    <td>
+                        If you go for a walk, you will be happier. <br>
+                        She will earn more money is she learns more languages. <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Second conditional</td>
+                    <td>
+                        If I were you, I would learn English every day. <br>
+                        I might buy a farm if I won the lottery. <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Third conditional</td>
+                    <td>
+                        If they had studied, they would have passed the test. <br>
+                        She would have left you if you had told her your secret. <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mixed type</td>
+                    <td>
+                        If I had one the election, I would be rich now. <br>
+                        They would have given me the job if I had more experience. <br>
+                    </td>
+                </tr>
+            </table>
+            </p>
         </details>
         <details>
             <summary>Reported speech</summary>
-            <p>examples</p>
+            <p>
+            <table>
+                <tr>
+                    <th>Direct speech</th>
+                    <th>Reported speech</th>
+                </tr>
+                <tr>
+                    <td>"She works here." - she said.</td>
+                    <td>She said she works/worked here. </td>
+                </tr>
+                <tr>
+                    <td>"He is studying." - she said.</td>
+                    <td>She said he was studying.</td>
+                </tr>
+                <tr>
+                    <td>"We have already left." - they said.</td>
+                    <td>They said they had already left.</td>
+                </tr>
+                <tr>
+                    <td>"She moved here." - he said.</td>
+                    <td>He said she had moved there.</td>
+                </tr>
+                <tr>
+                    <td>"I'll open the door." - he said.</td>
+                    <td>He said he would open the door.</td>
+                </tr>
+                <tr>
+                    <td>"They can swim." - they said.</td>
+                    <td>They said they could swim.</td>
+                </tr>
+                <tr>
+                    <td>"She may stop there." - he said.</td>
+                    <td>He said she might stop there.</td>
+                </tr>
+                <tr>
+                    <td>"You shall help him." - she said.</td>
+                    <td>She said I should help him.</td>
+                </tr>
+                <tr>
+                    <td>"Kids must be at school." - he said.</td>
+                    <td>He said kids must/had to be at school.</td>
+                </tr>
+                <tr>
+                    <td>"You should go home." - they said.</td>
+                    <td>They said I should go home.</td>
+                </tr>
+                <tr>
+                    <td>He asked: "Do you like reading?"</td>
+                    <td>He asked whether/if I liked reading.</td>
+                </tr>
+                <tr>
+                    <td>She saked: "Where did you go to school?"</td>
+                    <td>She asked where I had gone to school.</td>
+                </tr>
+                <tr>
+                    <td>"Clean your room." - she told her.</td>
+                    <td>She told her to clean her room.</td>
+                </tr>
+                <tr>
+                    <td>"Don't cry here." - he said to him.</td>
+                    <td>He asked him not to cry. </td>
+                </tr>
+            </table>
+            </p>
         </details>
         <details>
             <summary>Causatives</summary>
