@@ -14,7 +14,7 @@
     var userScore = 0;
     var timerInterval;
     var timeElapsed = 0;
-    
+     
 
     function displayQuestion(index) {
         var question = questions[index];
@@ -64,9 +64,9 @@
             allButtons[i].disabled = true;
         }
 
-        setTimeout(function () {
-            nextQuestion(questionIndex);
-        }, 3000);
+        // setTimeout(function () {
+        //     nextQuestion(questionIndex);
+        // }, 3000);
     }
 
     function nextQuestion(questionIndex) {
