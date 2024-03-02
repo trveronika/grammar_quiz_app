@@ -1,6 +1,4 @@
 body {
-    background-color: #01527b;
-    color: #fff;
     font-family: Arial, sans-serif;
 }
 
@@ -20,6 +18,18 @@ main {
     border-radius: 10px;
     margin-bottom: 20px;
     text-align: center;
+}
+
+#teachers-list .comment {
+    background-color: #3b8a89;
+    color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+#teachers-list .comment p {
+    margin: 10px 0;
 }
 
 #actions {
@@ -48,3 +58,4 @@ ul {
 li {
     margin-bottom: 5px;
 }
+

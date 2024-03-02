@@ -23,6 +23,7 @@
         </div>
         <div class="admin">
             <button id="admin">Admin</button>
+            <button id="contact">Contact</button>
         </div>
         <hr>
         <button onclick="toggleHelp()" class="help-button">Help</button>
@@ -41,6 +42,10 @@
 
         document.getElementById('admin').addEventListener('click', function() {
             window.location.href = 'login.php';
+        });
+
+        document.getElementById('contact').addEventListener('click', function() {
+            window.location.href = 'contact.php';
         });
 
         document.getElementById('leaderboard').addEventListener('click', function() {
