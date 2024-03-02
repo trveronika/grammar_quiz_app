@@ -252,7 +252,85 @@
         </details>
         <details>
             <summary>Modals</summary>
-            <p>examples</p>
+            <p>
+            <table>
+                <tr>
+                    <th>Type</th>
+                    <th>Examples</th>
+                </tr>
+                <tr>
+                    <td>Ability</td>
+                    <td>
+                        She can speak English fluently. <br>
+                        We were abel to solve this problem yesterday. <br>
+                        I could swim when I was 6 years old. <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Possibility</td>
+                    <td>
+                        They might be at home right now. <br>
+                        She may be sleepy after a long day. <br>
+                        You could have passed this exam if you would have studied more. <br>
+                        Jane might have lost her keys. She is still outside of the house. <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Assumptions</td>
+                    <td>
+                        She can't be at home. She has English lessons on Fridays. <br>
+                        He must be in the office. The lights are still on. <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Requests</td>
+                    <td>
+                        Can I help you? <br>
+                        Max I go to the restroom, please? <br>
+                        Would you be so kind as to open the window? <br>
+                        Could you call me back later? <br>
+                        Will you close that door for me? <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Suggestions and offers</td>
+                    <td>
+                        Shall we go out? <br>
+                        Let's eat somewhere else. <br>
+                        We could stay at home instead. <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Permission</td>
+                    <td>
+                        You can go out after helping outside. <br>
+                        She is allowed to stay up until 10. <br>
+                        You may use the computer over there if you need to. <br>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>Advice</td>
+                    <td>
+                        You should do exercices regularly. <br>
+                        We ought to learn English more often. <br>
+                        You had better help your sister. <br>
+                        They shouldn't have called us so late at night. <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Necessity and obligation</td>
+                    <td>
+                        She must go to the doctor. <br>
+                        Students have to write their homework. <br>
+                        Your lawn needs cutting. <br>
+                        You didn't need to buy me flowers. <br>
+                        You needn't have a raincoat. It's not raining. <br>
+                        You mustn't smoke inside. <br>
+                        We can't park here. <br>
+                    </td>
+            </table>
+            </p>
         </details>
         <details>
             <summary>Conditionals</summary>
@@ -369,15 +447,43 @@
         </details>
         <details>
             <summary>Causatives</summary>
-            <p>examples</p>
+            <p>
+                <table>
+                    <tr>
+                        <th>Type</th>
+                        <th>Examples</th>
+                    </tr>
+                    <tr>
+                        <td>Have</td>
+                        <td>
+                            I have my hair cut every year. <br>
+                            Will you have your car fixed next week? <br>
+                            You must have your room cleaned. <br>
+                            The boss will have the girl bring coffee. <br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Get</td>
+                        <td>
+                            I get my hair cut every year. <br>
+                            Will you get your car fixed next week? <br>
+                            You must get your room cleaned. <br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Other</td>
+                        <td>
+                            My mom lets me cook alone. <br>
+                            I helped her sell the car. <br>
+                            You always make me laugh. <br>
+                        </td>
+                    </tr>
+                </table>
+            </p>
         </details>
-        <!-- <ul>
-            <li><strong>Tenses:</strong> Present, Past, Future</li>
-            <li><strong>Passives</strong></li>
-        </ul> -->
     </details>
 
-    <details>
+    <!-- <details>
         <summary>Nouns</summary>
         <details>
             <summary>Singular and Plural</summary>
@@ -399,7 +505,7 @@
             <summary></summary>
             <p></p>
         </details>
-    </details>
+    </details> -->
 
 
 </body>

@@ -70,3 +70,11 @@ tr {
 td {
     padding: 10px;
 }
+
+th:first-child, td:first-child {
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
