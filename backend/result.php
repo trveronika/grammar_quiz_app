@@ -5,6 +5,23 @@ ini_set('display_errors', 1);
 
 $message = '';
 
+$totalQuestions = 25; // Assuming there are 25 questions in total
+$score = isset($_GET['score']) ? $_GET['score'] : 0;
+$percentage = ($score / $totalQuestions) * 100;
+
+// Determine the message based on the percentage
+if ($percentage == 100) {
+    $percentageMessage = "Perfect, perfect, perfect!";
+} elseif ($percentage >= 75) {
+    $percentageMessage = "Amazing, marvelous!";
+} elseif ($percentage >= 50) {
+    $percentageMessage = "How nice!";
+} elseif ($percentage >= 25) {
+    $percentageMessage = "Progress is progress!";
+} else {
+    $percentageMessage = "Practice makes perfect!";
+}
+
 if (isset($_GET['username'], $_GET['time'], $_GET['score'], $_GET['level'])) {
     $username = $_GET['username'];
     $time = $_GET['time'];
@@ -51,6 +68,10 @@ $conn->close();
         </div>
         <div id="message">
             <p><?php echo $message; ?></p>
+        </div>
+        <div id="result-info">
+            <p id="percentage"> <?php echo round($percentage, 2); ?>%</p>
+            <p id="percentage-message"><?php echo $percentageMessage; ?></p>
         </div>
         <div id="actions">
             <button id="home" onclick="window.location.href = 'index.php';">Go to Home</button>
