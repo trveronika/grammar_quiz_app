@@ -44,6 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -66,6 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <button type="submit">Login</button>
             </form>
             <p>Are you a new teacher? <a href="register.php">Register</a></p>
+            <p><a href="index.php">Home</a></p>
             <?php
 
             if (isset($error_message)) {
@@ -74,6 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ?>
         </div>
     </div>
+    </div>
 </body>
-</html>
 
+</html>

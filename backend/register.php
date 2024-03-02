@@ -127,6 +127,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <span class="error"><?php echo $password_confirm_err; ?></span>
                 </div>
                 <button type="submit">Register</button>
+                <p><a href="index.php">Home</a></p>
             </form>
             <?php
             if (isset($_GET['error'])) {

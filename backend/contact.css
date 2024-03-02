@@ -20,7 +20,7 @@ main {
     text-align: center;
 }
 
-#teachers-list .comment {
+#comment-list .comment {
     background-color: #3b8a89;
     color: #fff;
     border-radius: 10px;
@@ -58,4 +58,3 @@ ul {
 li {
     margin-bottom: 5px;
 }
-

@@ -29,14 +29,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <header>
-        <h1>Contact</h1>
+        <h1>Leave a comment</h1>
     </header>
     <main>
         <div id="contact-form">
-            <h2>Do you need help?</h2>
-            <p>Do you have a remark about one of the questions?</p>
-            <p>Do you have an idea that you would like to see here?</p>
-            <!-- Form to submit comments -->
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <label for="name">Name:</label><br>
                 <input type="text" id="name" name="name" required><br>
@@ -49,9 +45,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <button type="submit">Submit</button>
             </form>
+
         </div>
-        <div id="teachers-list">
-            <h2>Previous comments:</h2>
+        <div id="comment-list">
             <?php
             $sql = "SELECT name, email, comment, created_at FROM comments ORDER BY created_at DESC";
             $result = $conn->query($sql);

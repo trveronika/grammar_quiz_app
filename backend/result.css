@@ -61,3 +61,8 @@ main {
     border-radius: 15px;
     cursor: pointer;
 }
+
+#percentage {
+    background-color: #3b8a89;
+    color: white;
+}

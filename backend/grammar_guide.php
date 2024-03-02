@@ -10,9 +10,11 @@
 
 <body>
     <h1>Grammar Guide</h1>
-
-    <details>
-        <summary>Verbs</summary>
+    <div class="button">
+        <button onclick="window.location.href = 'index.php';">Home</button>
+    </div>
+    <!-- <details> -->
+        <!-- <summary>Verbs</summary> -->
         <details>
             <summary>Tenses</summary>
             <p>
@@ -481,7 +483,7 @@
                 </table>
             </p>
         </details>
-    </details>
+    <!-- </details> -->
 
     <!-- <details>
         <summary>Nouns</summary>
