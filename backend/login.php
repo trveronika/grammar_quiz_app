@@ -23,7 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $_SESSION["username"] = $username;
 
 
-                        header("location: crud.php");
+                        // header("location: crud.php");
+                        echo "<script>window.location.href = 'crud.php';</script>";
                         exit;
                     } else {
 

@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
     $conn->close();
 
-    header("Location: contact.php");
+    echo "<script>window.location.href = 'contact.php';</script>";
     exit();
 }
 ?>

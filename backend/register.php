@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $param_password = password_hash($password, PASSWORD_DEFAULT); 
             
             if ($stmt->execute()) {
-                header("location: login.php");
+                echo "<script>window.location.href = 'login.php';</script>";
                 exit();
             } else {
                 echo "Something went wrong. Please try again later.";
