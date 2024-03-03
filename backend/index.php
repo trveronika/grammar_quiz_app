@@ -16,6 +16,7 @@
             <button id="beginner" onclick="startQuiz('A2')">Beginner</button>
             <button id="intermediate" onclick="startQuiz('B2')">Intermediate</button>
             <button id="advanced" onclick="startQuiz('C1')">Advanced</button>
+            <button id="all" onclick="startQuiz('All')">Mixed</button>
         </div>
         <div class="additional">
             <button id="summary">Grammar Guide</button>
@@ -41,8 +42,9 @@
         }
 
         document.getElementById('admin').addEventListener('click', function() {
-            window.location.href = 'login.php';
+            window.location.href = 'crud.php';
         });
+        // crud instead of login, crud redirects to login if user is not logged in
 
         document.getElementById('contact').addEventListener('click', function() {
             window.location.href = 'contact.php';
@@ -54,6 +56,10 @@
 
         document.getElementById('summary').addEventListener('click', function() {
             window.location.href = 'grammar_guide.php';
+        });
+
+        document.getElementById('all').addEventListener('click', function() {
+            window.location.href = 'quiz_all.php';
         });
 
         function toggleHelp() {

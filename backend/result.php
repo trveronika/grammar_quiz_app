@@ -5,7 +5,12 @@ ini_set('display_errors', 1);
 
 $message = '';
 
-$totalQuestions = 25;
+if ($_GET['level'] == "All"){
+    $totalQuestions = 150;
+} else {
+    $totalQuestions = 25;
+}
+
 $score = isset($_GET['score']) ? $_GET['score'] : 0;
 $percentage = ($score / $totalQuestions) * 100;
 
@@ -21,7 +26,8 @@ if ($percentage == 100) {
     $percentageMessage = "Practice makes perfect!";
 }
 
-if (isset($_GET['username'], $_GET['time'], $_GET['score'], $_GET['level'])) {
+if ($_GET['level'] != "All"){
+if (isset($_GET['username'], $_GET['time'], $_GET['score'], $_GET['level'])){
     $username = $_GET['username'];
     $time = $_GET['time'];
     $score = $_GET['score'];
@@ -43,6 +49,7 @@ if (isset($_GET['username'], $_GET['time'], $_GET['score'], $_GET['level'])) {
     }
 } else {
     $message = "Required data is missing";
+}
 }
 
 $conn->close();
@@ -72,7 +79,7 @@ $conn->close();
         </div>
         <div id="actions">
             <button id="home" onclick="window.location.href = 'index.php';">New quiz</button>
-            <button id="contact" onclick="window.location.href = 'contact.php';">Contact a Teacher</button>
+            <!-- <button id="contact" onclick="window.location.href = 'contact.php';">Contact a Teacher</button> -->
             <button id="leaderboard" onclick="window.location.href = 'leaderboard.php';">Leaderboard</button>
         </div>
     </main>
