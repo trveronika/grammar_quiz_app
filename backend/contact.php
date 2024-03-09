@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'connect.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -17,6 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "<script>window.location.href = 'contact.php';</script>";
     exit();
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <div id="comment-list">
             <?php
-            $sql = "SELECT name, email, comment, created_at FROM comments ORDER BY created_at DESC";
+            $sql = "SELECT id, name, email, comment, created_at, reply FROM comments ORDER BY created_at DESC";
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
@@ -57,7 +59,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     echo "<p><strong>Name:</strong> " . $row["name"] . "</p>";
                     echo "<p><strong>Email:</strong> " . $row["email"] . "</p>";
                     echo "<p><strong>Comment:</strong><br>" . $row["comment"] . "</p>";
-                    echo "<p><strong>Timestamp:</strong> " . $row["created_at"] . "</p>";
+                    echo "<p><strong>Time:</strong> " . $row["created_at"] . "</p>";
+                    echo "<p><strong>Reply:</strong> " . $row["reply"] . "</p>";
+
+                    if (isset($_SESSION['username'])) {
+                        echo "<button onclick='deleteComment(" . $row['id'] . ")'>Delete</button>";
+                    }
+                    
+                    if (isset($_SESSION['username'])) {
+                        echo "<button onclick='replyToComment(" . $row['id'] . ")'>Reply</button>";
+                    }
+
                     echo "</div>";
                 }
             } else {
@@ -68,6 +80,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div id="actions">
             <button id="home" onclick="window.location.href = 'index.php';">Home</button>
         </div>
-    </main>
+        </main>
+
 </body>
+<script>
+    function deleteComment(commentId) {
+        if (confirm("Are you sure you want to delete this comment?")) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "delete_comment.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    if (xhr.responseText.trim() === "success") {
+                        location.reload();
+                    } else {
+                        alert("Error deleting comment.");
+                    }
+                }
+            };
+            xhr.send("comment_id=" + commentId);
+        }
+    }
+
+    function replyToComment(commentId) {
+        var reply = prompt("Enter your reply:");
+        if (reply !== null && reply.trim() !== "") {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "reply.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    if (xhr.responseText.trim() === "success") {
+                        location.reload();
+                    } else {
+                        alert("Error adding reply.");
+                    }
+                }
+            };
+            xhr.send("comment_id=" + commentId + "&reply=" + encodeURIComponent(reply));
+        }
+    }
+</script>
+
 </html>
