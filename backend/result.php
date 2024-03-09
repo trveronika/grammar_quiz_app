@@ -6,7 +6,7 @@ ini_set('display_errors', 1);
 $message = '';
 
 if ($_GET['level'] == "All"){
-    $totalQuestions = 150;
+    $totalQuestions = 100;
 } else {
     $totalQuestions = 25;
 }
