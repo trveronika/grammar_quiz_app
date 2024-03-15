@@ -34,43 +34,8 @@
             <p>Are you interested in the top results? Check out the leaderboard</p>
             <p>Are you a teacher? Register as an admin and edit the questions after logging in</p>
         </div>
-    </main>
-    
-    <script>
-        function startQuiz(level) {
-            window.location.href = 'quiz.php?level=' + level; 
-        }
-
-        document.getElementById('admin').addEventListener('click', function() {
-            window.location.href = 'crud.php';
-        });
-        // crud instead of login, crud redirects to login if user is not logged in
-
-        document.getElementById('contact').addEventListener('click', function() {
-            window.location.href = 'contact.php';
-        });
-
-        document.getElementById('leaderboard').addEventListener('click', function() {
-            window.location.href = 'leaderboard.php';
-        });
-
-        document.getElementById('summary').addEventListener('click', function() {
-            window.location.href = 'grammar_guide.php';
-        });
-
-        document.getElementById('all').addEventListener('click', function() {
-            window.location.href = 'quiz_all.php';
-        });
-
-        function toggleHelp() {
-            var helpDiv = document.getElementById('help');
-            if (helpDiv.style.display === 'none') {
-                helpDiv.style.display = 'block';
-            } else {
-                helpDiv.style.display = 'none';
-            }
-        }
-    </script>
+    </main>    
+    <script src="index.js"></script>
     <footer>
         <p>Developed by Veronika Tári</p>
         <p>2024</p>
